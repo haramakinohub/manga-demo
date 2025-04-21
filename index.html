@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>【社内用】マンガ書籍サイト 初期案</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Noto Sans JP as the base font */
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #2C2C2C;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1.5px, transparent 1.5px);
+            background-size: 25px 25px;
+        }
+        /* Custom accent colors for easier reference if needed */
+        .accent-a { color: #F25C8E; }
+        .bg-accent-a { background-color: #F25C8E; }
+        .border-accent-a { border-color: #F25C8E; }
+
+        .accent-b { color: #D32F2F; }
+        .bg-accent-b { background-color: #D32F2F; }
+        .border-accent-b { border-color: #D32F2F; }
+
+        .accent-c { color: #DAFF3C; }
+        .bg-accent-c { background-color: #DAFF3C; }
+        .border-accent-c { border-color: #DAFF3C; }
+        .bg-subtle-c { background-color: #F1FFDF; }
+
+        /* Simple animation for cards on hover */
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    </style>
+    <script>
+        // Tailwind Custom Configuration (Optional - for extending themes)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                        serif: ['Source Serif Pro', 'serif'], // Example for Pattern B
+                        hiragino: ['Hiragino Mincho ProN', 'serif'] // Example for Pattern C
+                    },
+                    colors: {
+                        'accent-a': '#F25C8E',
+                        'accent-a-light': '#80E9FF',
+                        'accent-b': '#D32F2F',
+                        'accent-c': '#DAFF3C',
+                        'subtle-c': '#F1FFDF',
+                        'neon-purple': '#B026FF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-gray-100 leading-relaxed">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+
+        <header class="bg-white rounded-lg shadow-md p-6 md:p-8 mb-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">【社内用】マンガ書籍サイト 初期案</h1>
+            <p class="text-lg text-gray-600">ブレスト前に方向性を揃えるためのドラフト</p>
+            <p class="text-sm text-gray-500 mt-2">※ クライアント提出用ではありません。</p>
+        </header>
+
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8 card-hover">
+            <h2 class="text-2xl font-semibold text-gray-900 border-b pb-3 mb-4">目的</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li>書籍PRから購入導線までをシンプルかつ効果的に接続</li>
+                <li>スマホ優先＆PCでもリッチなレスポンシブ設計</li>
+                <li>制作効率向上のためAI／ノーコードツール活用</li>
+            </ul>
+        </section>
+
+        <div class="space-y-8">
+
+            <section class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                <div class="p-6 border-l-4 border-accent-a">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">パターンA: Editorial Grid ― "SHURO" 風</h2>
+                    <img src="https://placehold.co/800x300/f25c8e/ffffff?text=SHURO+like" alt="SHURO サイトのイメージ" class="mb-6 h-48 md:h-64 w-full object-cover rounded">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2 text-gray-800">トーン＆マナー</h3>
+                            <p class="text-gray-700 mb-4">ホワイトベース＋黒テキスト、アクセントカラー<span class="font-semibold accent-a">#F25C8E</span>。洗練された雑誌系UI。</p>
+                            <h3 class="text-lg font-semibold mb-2 text-gray-800">カラーパレット</h3>
+                            <div class="flex space-x-2 mb-4">
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #F47C85" title="#F47C85"></div>
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #96E89E" title="#96E89E"></div>
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #7B84F7" title="#7B84F7"></div>
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #FFF1F1" title="#FFF1F1"></div>
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #F7A488" title="#F7A488"></div>
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #A887F4" title="#A887F4"></div>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2 text-gray-800">使用フォント</h3>
+                            <div class="bg-gray-800 p-3 rounded mb-4">
+                                <p class="font-normal text-gray-200">Noto Sans JP（本文）</p>
+                                <p class="font-bold text-gray-200">Noto Sans JP Bold（見出し）</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2 text-gray-800">レイアウト</h3>
+                            <p class="text-gray-700 mb-4">ヒーローバナー → カテゴリタブ → カード型グリッド → ニュースレターCTA → フッター</p>
+                            <h3 class="text-lg font-semibold mb-2 text-gray-800">主要要素</h3>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700 mb-4">
+                                <li>作品カード：表紙＋更新日＋タグ</li>
+                                <li>試し読みビューア(Modal)</li>
+                                <li>著者プロフィール</li>
+                                <li>購入ボタン：Amazon / 楽天 / 自社ストア</li>
+                                <li>SNS埋め込み (X/Instagram)</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <h3 class="text-lg font-semibold mb-2 text-gray-800">技術・運用</h3>
+                    <p class="text-gray-700 mb-4">Next.js（App Router）＋TailwindCSS。Headless CMS：Storyblok or microCMS。フェーズ1は静的ジェネレート。</p>
+                    <h3 class="text-lg font-semibold mb-2 text-gray-800">向いている案件</h3>
+                    <p class="text-gray-700 mb-4">作品数・更新頻度が多く、複数シリーズを横断的に見せたい場合。</p>
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded mt-4">
+                        <p class="font-semibold text-blue-800">参考URL: <a href="https://shuro.world/" target="_blank" class="text-blue-600 hover:underline">shuro.world</a></p>
+                        <p class="text-blue-700 mt-1"><strong>特徴:</strong> ポップなロゴ＋ステッカー風イラスト。スクロールでグリッド切替、中央配置型。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-md overflow-hidden card-hover mt-8">
+                <div class="p-6 border-l-4 border-accent-b">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">パターンB: Modern Editorial ― "Pen Online" 風</h2>
+                    <img src="https://placehold.co/800x300/ffffff/1a1a1a?text=Pen+Online+like" alt="Pen Online サイトのイメージ" class="mb-6 h-48 md:h-64 w-full object-cover rounded">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2 text-gray-800">トーン＆マナー</h3>
+                            <p class="text-gray-700 mb-4">白背景＋黒ナビ、アクセントカラー<span class="font-semibold accent-b">#D32F2F</span>。クリーンでタイポグラフィ重視。</p>
+                             <h3 class="text-lg font-semibold mb-2 text-gray-800">カラーパレット</h3>
+                            <div class="flex space-x-2 mb-4">
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #B6CDE0" title="#B6CDE0"></div>
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #FFFFFF" title="#FFFFFF"></div>
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #000000" title="#000000"></div>
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #489D71" title="#489D71"></div>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2 text-gray-800">使用フォント</h3>
+                            <div class="bg-gray-800 p-3 rounded mb-4">
+                                <p class="font-serif font-bold text-gray-200">Source Serif Pro（見出し - 要Webフォント）</p>
+                                <p class="font-sans font-normal text-gray-200">Noto Sans JP（本文）</p>
+                             </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2 text-gray-800">レイアウト</h3>
+                            <p class="text-gray-700 mb-4">固定ヘッダーナビ → フルサイズトップ記事 → カテゴリ付きグリッド → 無限スクロール</p>
+                             <h3 class="text-lg font-semibold mb-2 text-gray-800">主要要素</h3>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700 mb-4">
+                                <li>トップナビゲーション（固定）</li>
+                                <li>フルサイズのトップ記事</li>
+                                <li>タグによるカテゴリ分類</li>
+                                <li>洗練されたタイポグラフィ</li>
+                                <li>リンクカード型関連記事</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="bg-red-50 border-l-4 border-red-400 p-4 rounded mt-4">
+                        <p class="font-semibold text-red-800">参考URL: <a href="https://www.pen-online.jp/" target="_blank" class="text-red-600 hover:underline">pen-online.jp</a></p>
+                        <p class="text-red-700 mt-1"><strong>特徴:</strong> 白背景＋ブラックナビ。シンプルグリッド。無限スクロール。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-lg shadow-md overflow-hidden card-hover mt-8">
+                <div class="p-6 border-l-4 border-accent-c">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">パターンC: Playful Neon ― "POPEYE" 風</h2>
+                    <img src="https://placehold.co/800x300/DAFF3C/333333?text=POPEYE+like" alt="POPEYE サイトのイメージ" class="mb-6 h-48 md:h-64 w-full object-cover rounded">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2 text-gray-800">トーン＆マナー</h3>
+                            <p class="text-gray-700 mb-4">ネオンイエロー<span class="font-semibold text-black bg-accent-c px-1 rounded">#DAFF3C</span>＋淡背景<span class="font-semibold text-gray-600 bg-subtle-c px-1 rounded">#F1FFDF</span>。遊び心あるデザイン。</p>
+                             <h3 class="text-lg font-semibold mb-2 text-gray-800">カラーパレット</h3>
+                            <div class="flex space-x-2 mb-4">
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #D7FAEF" title="#D7FAEF"></div>
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #DEFF54" title="#DEFF54"></div>
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #000000" title="#000000"></div>
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #FFE9AA" title="#FFE9AA"></div>
+                                <div class="w-10 h-10 rounded-full border border-gray-300" style="background-color: #707070" title="#707070"></div>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2 text-gray-800">使用フォント</h3>
+                            <div class="bg-gray-800 p-3 rounded mb-4">
+                                <p class="font-hiragino font-medium text-gray-200">Hiragino Mincho（見出し - 要ライセンス確認）</p>
+                                <p class="font-sans font-normal text-gray-200">Noto Sans JP（本文）</p>
+                             </div>
+                        </div>
+                        <div>
+                             <h3 class="text-lg font-semibold mb-2 text-gray-800">レイアウト</h3>
+                            <p class="text-gray-700 mb-4">大ロゴ → ニュースティッカー → 横スクロール特集 → パララックス</p>
+                            <h3 class="text-lg font-semibold mb-2 text-gray-800">主要要素</h3>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700 mb-4">
+                                <li>インパクトのある大きなロゴ</li>
+                                <li>鮮やかなアクセントカラー</li>
+                                <li>スクロールアニメーション</li>
+                                <li>横スクロールセクション</li>
+                                <li>遊び心あるUIデザイン</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded mt-4">
+                        <p class="font-semibold text-yellow-800">参考URL: <a href="https://popeyemagazine.jp/" target="_blank" class="text-yellow-600 hover:underline">popeyemagazine.jp</a></p>
+                        <p class="text-yellow-700 mt-1"><strong>特徴:</strong> ネオンロゴ＋淡ライム背景。シンプルかつモダン。</p>
+                     </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8 card-hover">
+            <div class="prose max-w-none">
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">マンガ書籍PRサイトのためのウェブデザイン方向性</h2>
+                    <p class="text-lg text-gray-700">2025年のトレンドを踏まえた、効果的なPRサイト構築のためのガイドライン</p>
+                </div>
+
+                <div class="border-l-4 border-accent-a pl-4 mb-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">I. 2025年の主要デザイントレンド</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-xl font-semibold text-accent-a mb-3">1. ポストミニマリズム / 戦略的マキシマリズム</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>ミニマリズムのシンプルさを基盤にしつつ、個性や遊び心を加えるスタイル</li>
+                                <li>クリーンなレイアウトと十分なホワイトスペースを維持しながら、大胆な色彩、特大のタイポグラフィ、印象的な画像を戦略的に取り入れる</li>
+                                <li>マンガアートの豊かな表現力を、整理されたレイアウト内で引き立てるのに最適</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-xl font-semibold text-accent-a mb-3">2. 表現力豊かなタイポグラフィ</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>大胆で特大サイズ、ダイナミックで実験的なフォント活用</li>
+                                <li>マンガの表現力豊かなレタリングを反映したフォント選択</li>
+                                <li>ヒーローセクションでの大胆なタイポグラフィの活用</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-xl font-semibold text-accent-a mb-3">3. トレンディな色彩戦略</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>鮮やかな「ドーパミンカラー」</li>
+                                <li>洗練されたダークモードオプション</li>
+                                <li>繊細なグラデーションとグラスモーフィズム効果</li>
+                                <li>マンガからカラーパレットを派生させる真正性の確保</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-xl font-semibold text-accent-a mb-3">4. 目的を持ったインタラクティビティ</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>マイクロインタラクション</li>
+                                <li>スクロール連動アニメーション</li>
+                                <li>パララックス効果</li>
+                                <li>適度な3D要素</li>
+                                <li>ユーザー体験を向上させる目的重視の実装</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-l-4 border-accent-b pl-4 mb-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">II. 重要なウェブサイト構成要素</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-xl font-semibold text-accent-b mb-3">1. インパクトのあるヒーローセクション設計</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>フルスクリーン/フルページ表示の活用</li>
+                                <li>魅力的な見出し、高品質なビジュアル、明確なCTAの組み合わせ</li>
+                                <li>モバイル画面に最適化された適応型レイアウト</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-xl font-semibold text-accent-b mb-3">2. 効果的なマンガショーケース</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>書籍カバーと内部アートプレビューの統合</li>
+                                <li>視覚的ストーリーテリングの活用</li>
+                                <li>マンガのアートスタイルを反映したレイアウト</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-xl font-semibold text-accent-b mb-3">3. 明確なコンバージョン経路</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>目立つ購入リンク（複数小売業者対応）</li>
+                                <li>「試し読み」オプションへの明確な導線</li>
+                                <li>シンプルなニュースレター登録（オプション）</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-xl font-semibold text-accent-b mb-3">4. 信頼と興味の構築要素</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>著者/アーティスト紹介（簡潔に）</li>
+                                <li>レビュー/推薦文のスペース</li>
+                                <li>コンテンツプレビュー（「試し読み」機能）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-l-4 border-emerald-400 pl-4 mb-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">III. 推奨アプローチと構造</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-xl font-semibold text-emerald-400 mb-3">1. サイト構造オプション</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>シングルページ構成：すべての要素を1ページに効果的に配置</li>
+                                <li>最小限の複数ページ：ホーム＋詳細ページ程度のシンプル構成</li>
+                                <li>ロングスクロールデザインの効果的活用</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-xl font-semibold text-emerald-400 mb-3">2. 技術的基盤の確保</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>モバイルファーストアプローチの徹底</li>
+                                <li>パフォーマンス最適化（画像圧縮、効率的コード）</li>
+                                <li>アクセシビリティへの配慮（コントラスト、セマンティックHTMLなど）</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-xl font-semibold text-emerald-400 mb-3">3. トレンドとのバランス</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>PRの目的に適合するトレンドの選択的採用</li>
+                                <li>視覚的魅力と機能性のバランス確保</li>
+                                <li>ブランド・マンガの個性を優先した一貫性のあるデザイン</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-l-4 border-purple-500 pl-4">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">IV. 方向性決定ポイント</h3>
+                    <p class="text-gray-700 mb-6">この資料を基に、以下の点について方向性を決定することをお勧めします：</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="text-xl font-semibold text-purple-700 mb-3">デザイン要素</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><strong>メインビジュアル戦略</strong>：どのマンガアートをヒーローセクションで中心的に使用するか</li>
+                                <li><strong>カラースキーム</strong>：マンガから派生させる主要カラーパレット</li>
+                                <li><strong>タイポグラフィ選択</strong>：マンガスタイルに合った大胆なフォント</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="text-xl font-semibold text-purple-700 mb-3">技術要素</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><strong>インタラクション要素</strong>：取り入れるアニメーションやマイクロインタラクションのレベル</li>
+                                <li><strong>ページ構成</strong>：シングルページか最小限の複数ページ構成か</li>
+                                <li><strong>「試し読み」実装方法</strong>：外部リンクか埋め込みコンテンツか</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg">
+                        <p class="text-gray-700">上記の要素を貴社のブランドとマンガの特性に合わせて戦略的に選択することで、トレンド感があり、効果的なPRを実現するウェブデザインが構築できます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6 mt-8 card-hover">
+            <h2 class="text-2xl font-semibold text-gray-900 border-b pb-3 mb-4">会議での確認・決定事項 / 次のアクション</h2>
+            <h3 class="text-lg font-semibold mb-2 text-gray-800 mt-4">現状確認と要件定義</h3>
+             <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li><strong>ターゲット読者層の明確化:</strong> 既存ファン層、新規読者層、年齢、性別など</li>
+                <li><strong>サイトのKPI設定:</strong> PV数、購入転換率、メルマガ登録数など、何を重視するか</li>
+                <li><strong>掲載コンテンツ範囲の決定:</strong> 作品紹介以外に、著者情報、ニュース、ブログ、特集記事、ファンコミュニティ機能などが必要か</li>
+            </ul>
+             <h3 class="text-lg font-semibold mb-2 text-gray-800 mt-4">デザインと技術選定</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
+                <li><strong>デザインパターンの方向性確認:</strong> 提示した3パターンの初期フィードバック、好みの方向性</li>
+                <li><strong>技術・運用面の確認:</strong> 予算感、希望する公開時期、運用体制（誰が更新するか）、サーバー・ドメインの希望</li>
+                <li><strong>拡張性の確認:</strong> 将来的に追加したい機能（例：多言語対応、会員機能、イベント告知）</li>
+            </ul>
+             <h3 class="text-lg font-semibold mb-2 text-gray-800 mt-4">次のステップ</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li><strong>スケジュール（案）の確認:</strong> 要件定義 → 情報設計 → モック → β公開 → 正式ローンチ</li>
+                <li><strong>選定基準のすり合わせ:</strong> コスト・運用負荷・拡張性のバランスをどう考えるか</li>
+                <li><strong>次回ミーティング日程調整</strong></li>
+            </ul>
+        </section>
+
+        <footer class="mt-12 text-right">
+            <p class="text-sm text-gray-500 italic">作成: 原澤（kaika担当）</p>
+            <p class="text-xs text-gray-400 mt-1">日付: 2025年4月21日</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
